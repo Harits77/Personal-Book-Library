@@ -4,7 +4,7 @@
 
 **Personal Book Library** is a full-stack web application that helps users search, save, and manage their personal book collection. It integrates the **Google Books API** to fetch book data and allows users to store their favorite books in a custom library.
 
-Built using the **MERN stack (MongoDB, Express, React, Node.js)**, this app demonstrates CRUD operations, API integration, and clean UI practices.
+Built using the **MongoDB, Java Springboot , Next Js, Tailwind CSS**, this app demonstrates CRUD operations, API integration, and clean UI practices.
 
 ---
 
@@ -22,27 +22,33 @@ Built using the **MERN stack (MongoDB, Express, React, Node.js)**, this app demo
 
 | Layer     | Technology             |
 |-----------|------------------------|
-| Frontend  | React, Tailwind CSS    |
-| Backend   | Node.js, Express.js    |
-| Database  | MongoDB + Mongoose     |
+| Frontend  | Next Js, Tailwind CSS  |
+| Backend   | Springboot             |
+| Database  | MongoDB                |
 | API       | Google Books API       |
-| Auth      | (Add if using JWT/Auth system)
 
 ---
 
 ## 📦 Installation
 
-> Requires: Node.js, MongoDB (local or Atlas), npm
-
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/Harits77/Personal-Book-Library.git
 cd Personal-Book-Library
 
-# Install backend dependencies
 cd backend
-npm install
+# If using Maven
+./mvnw spring-boot:run
+
+# OR if using Gradle
+./gradlew bootRun
+
+#Configure your MongoDB connection in application.properties:
+spring.data.mongodb.uri=mongodb://localhost:27017/librarydb
+
 
 # Install frontend dependencies
 cd ../frontend
 npm install
+npm run dev
+
