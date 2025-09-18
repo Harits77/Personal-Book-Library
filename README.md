@@ -18,7 +18,7 @@ Welcome to **Personal Book Library**, a full-stack web application to manage you
 
 | Layer     | Technology                  |
 |-----------|-----------------------------|
-| Frontend  | React + Vite                |
+| Frontend  | Next Js               |
 | Backend   | Spring Boot + MongoDB       |
 | API       | RESTful endpoints           |
 | Styling   | Tailwind CSS                |
