@@ -17,16 +17,16 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    // Get all books by user
+    // Get books for a specific user
     @GetMapping("/{userId}")
     public List<Book> getBooksByUser(@PathVariable String userId) {
         return bookService.getBooksByUser(userId);
     }
 
-    // Save book with userId
+    // Add a book for a user
     @PostMapping("/{userId}")
     public ResponseEntity<Book> addBook(@PathVariable String userId, @RequestBody Book book) {
-        book.setUserId(userId); // Set userId before saving
+        book.setUserId(userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(bookService.save(book));
     }
 
