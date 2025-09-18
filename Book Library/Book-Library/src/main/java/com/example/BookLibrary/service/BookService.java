@@ -13,14 +13,17 @@ public class BookService {
     @Autowired
     private BookRepository repo;
 
+    // Get all books by user
     public List<Book> getBooksByUser(String userId) {
         return repo.findByUserId(userId);
     }
 
+    // Save a book
     public Book save(Book book) {
         return repo.save(book);
     }
 
+    // Delete book by ID
     public void delete(String id) {
         repo.deleteById(id);
     }
