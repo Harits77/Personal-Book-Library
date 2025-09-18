@@ -19,6 +19,8 @@ type SavedBook = {
   title: string;
   author: string;
   thumbnail?: string;
+  previewLink?: string;
+
 };
 
 export default function Home() {
@@ -84,6 +86,7 @@ export default function Home() {
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors?.[0] || "Unknown",
       thumbnail: book.volumeInfo.imageLinks?.thumbnail || "",
+      previewLink: book.volumeInfo.previewLink || ""
     };
 
     try {
@@ -249,6 +252,16 @@ export default function Home() {
                       🗑️ Delete
                     </button>
                   </div>
+                  {book.previewLink && (
+                    <a
+                      href={book.previewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 text-sm font-medium py-2 px-3 rounded-md text-center transition duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-gray-700"
+                    >
+                      Preview
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
