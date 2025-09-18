@@ -17,4 +17,5 @@ public class Book {
     private String author;
     private String thumbnail;
     private String userId;
+    private String previewLink;
 }
