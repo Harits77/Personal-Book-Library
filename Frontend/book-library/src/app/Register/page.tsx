@@ -17,7 +17,7 @@ export default function Register() {
       setSuccess("Registration successful! Redirecting to login...");
       setError("");
       setTimeout(() => {
-        router.push("/Login"); // Redirect to Login page after successful registration
+        router.push("/Login"); 
       }, 1500);
     } catch (err) {
       console.error("Registration error:", err);
