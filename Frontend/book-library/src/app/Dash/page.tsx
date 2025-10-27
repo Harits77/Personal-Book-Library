@@ -78,7 +78,7 @@ export default function Home() {
     const userId = localStorage.getItem("userId");
     if (!userId) {
       alert("Please log in to save books.");
-      router.push("/"); // Suggest redirecting to login more clearly
+      router.push("/"); 
       return;
     }
 
@@ -91,7 +91,7 @@ export default function Home() {
 
     try {
       await axios.post(`http://localhost:7081/api/library/${userId}`, data);
-      await fetchLibrary(); // Refresh library after saving
+      await fetchLibrary(); 
     } catch (err) {
       console.error("Save book error:", err);
       alert("Failed to save book. It might already be in your library.");
@@ -101,7 +101,7 @@ export default function Home() {
   const deleteBook = async (id: string) => {
     try {
       await axios.delete(`http://localhost:7081/api/library/${id}`);
-      await fetchLibrary(); // Refresh library after deleting
+      await fetchLibrary();
     } catch (err) {
       console.error("Delete book error:", err);
       alert("Failed to delete book. Please try again.");
@@ -109,8 +109,8 @@ export default function Home() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("userId"); // Clear login info
-    router.push("/"); // Redirect to login page, not just "/"
+    localStorage.removeItem("userId"); 
+    router.push("/"); 
   };
 
   useEffect(() => {
